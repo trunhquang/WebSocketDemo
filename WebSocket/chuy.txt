@@ -1,0 +1,25 @@
+V. MỘT SỐ CHÚ Ý
+
+- Bạn có thể phát sự kiện cho tất cả client đang kết nối bằng phương thức: io.sockets.emit();
+- Khi làm việc với socket, phần code viết cho client sẽ được socket server host tại địa chỉ:http://<socket_address>:<socketport>/socket.io/socket.io.js. Bạn phải thêm script này vào file html:
+HTML:
+
+<script src='http://localhost:8080/socket.io/socket.io.js'></script>
+hoặc bạn có thể lưu source này thành một file javascript riêng. Toàn bộ đoạn source đó bạn có thể lấy ở đây
+- Bạn có thể kết nối đến một socket server ngoài (miễn là nó cho phép kết nối - cái config io.set('origins', '*:*') đó)
+- Socket.IO server có thể chạy hoàn toàn độc lập với web server, vì vậy đừng hỏi những câu ngớ ngẩn như:
+
+? Socket.IO chỉ có thể làm việc với Node.js thôi sao?
+* Không, bạn đang hiểu sai, Node.js là môi trường để Socket.IO chạy, vì vậy bạn phải dùng Node.js thôi. Còn Socket.IO chỉ làm việc với javascript ở phía client. Bạn có thể setup socket server ở 1 port khác, thậm chí là máy chủ khác.
+
+? Vậy PHP có dùng được Socket.IO không?
+* Có (mà cũng là không ) như đã nói, Socket.IO chỉ làm việc với javascript. Mà khi bạn viết web bằng PHP, ASP.NET, JSP,... hay cái gì đi chăng nữa, bạn vẫn phải dùng javascript ở phía client cơ mà. Hiểu theo cách khác, bạn viết web site của bạn bằng ngôn ngữ gì cũng được, miễn client connect đến socket server là chạy thôi.
+
+? Socket.IO dùng để tạo chat-box thôi sao?
+* Socket.IO có thể dùng làm mọi ứng dụng web trực tuyến, việc phát các sự kiện là do bạn, xử lý các sự kiện đó cũng do bạn, vậy bạn làm cái gì chả được ?
+
+? Làm sao để hiển thị nội dung chat lên trang web, '$' trong đoạn code này là gì vậy, v.v...
+* Bạn nên đọc lại hoặc tìm hiểu thêm về jQuery, đó không phải là việc Socket.IO phải làm
+
+? Socket.IO là web socket à?
+* Đúng! Socket.IO là một ứng dụng làm nhiệm vụ web-socket, ngoài ra còn nhiều ứng dụng khác. Nhưng Socket.IO là các
